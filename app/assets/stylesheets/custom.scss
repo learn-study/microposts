@@ -5,6 +5,8 @@
 
 body {
   padding-top: 60px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
 }
 
 section {
@@ -33,7 +35,6 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
@@ -104,4 +105,47 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+
+
+
+
+h1 .gravatar{
+   border-radius:8px;
+}
+h1 .user_name{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    word-wrap: break-word;
+    margin: 10px 0;
+}
+h1 .user_profile{
+  color:#555;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 300;
+}
+h1 .user_detail{
+  color:#555;
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 300;
+}
+.fa{
+  color:#78a;
+  padding-right: 10px;
+}
+
+.users{
+  margin-top:15px;
+}
+.users a{
+  color:#333;
+  font-weight: 700;
+}
+.users .gravatar{
+   border-radius:8px;
+   margin-bottom:10px;
 }

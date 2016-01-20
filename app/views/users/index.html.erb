@@ -45,7 +45,15 @@
       </h1>
     </section>
   </aside>
-  <div class="col-md-9">
-    
+  <div class="users col-md-9">
+    <% @users.each do |user| %>
+      <% next unless user != current_user %>
+      <div class="col-md-4">
+        <%= link_to gravatar_for(user,size:120), user,title: user.name %><br>
+        <%= link_to user.name, user %>
+      </div>
+    <% end %>    
   </div>
 </div>
+
+
