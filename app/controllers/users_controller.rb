@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :followings, :followers]
   before_action :authentication, only: [:edit, :update]
   before_action :logged_in_user, only: [:index]
   
   def index
     @user = current_user
-    @users = User.all
+    @users = User.all.where.not(:id => @user.id)
+    render 'show'
   end
 
   def show
@@ -36,6 +37,16 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def followings
+    @followings = @user.following_users
+    render 'show'
+  end
+
+  def followers
+    @followers = @user.follower_users
+    render 'show'
   end
 
   private
