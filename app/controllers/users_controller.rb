@@ -5,12 +5,12 @@ class UsersController < ApplicationController
   
   def index
     @user = current_user
-    @users = User.all.where.not(:id => @user.id)
+    @users = User.all.where.not(:id => @user.id).page params[:page]
     render 'show'
   end
 
   def show
-    @microposts = @user.microposts.order(created_at: :desc)
+    @microposts = @user.microposts.order(created_at: :desc).page params[:page]
   end
 
   def new
@@ -40,12 +40,12 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @followings = @user.following_users
+    @followings = @user.following_users.page params[:page]
     render 'show'
   end
 
   def followers
-    @followers = @user.follower_users
+    @followers = @user.follower_users.page params[:page]
     render 'show'
   end
 
