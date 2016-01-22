@@ -138,6 +138,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius:8px;
 }
 
 .gravatar_edit {
@@ -167,13 +168,13 @@ aside {
   }
   .timestamp {
     color: $gray-light;
-    display: block;
     margin-left: 60px;
   }
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+    border-radius:8px;
   }
 }
 
@@ -190,11 +191,6 @@ span.picture {
     border: 0;
   }
 }
-
-
-
-
-
 
 
 
@@ -284,7 +280,6 @@ h1 .user_detail{
   font-size:16px;
 }
 
-
 .ProfileBox .user_profile{
   position: absolute;
   top: 160px;
@@ -312,4 +307,30 @@ h1 .user_detail{
 }
 .big_count{
   font-size:20px;  color:#088253;
+}
+
+/* つぶやきアイコン部 */
+.icons{
+  font-weight:bold;
+  font-size: 20px;
+}
+.icons a:hover{
+  text-decoration:none;
+}
+.trash:hover{
+  color:#000;
+}
+.retweet:hover{
+  color:#088253;
+}
+
+/* リツイート装飾 */
+.green{
+  background:#088253;
+  color:#fff;
+  border-radius: 3px;
+  padding:3px;
+  text-align:center;
+  font-weight:300;
+  font-size:samll;
 }
