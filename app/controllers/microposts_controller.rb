@@ -16,8 +16,10 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.find_by(id: params[:id])
     return redirect_to root_url if @micropost.nil?
     retweets = Micropost.where("retweet = ?", @micropost.id)
-    retweets.each do |post|
-      post.destroy
+    if retweets.present?
+      retweets.each do |post|
+        post.destroy
+      end
     end
     @micropost.destroy
     flash[:success] = "Micropost deleted"

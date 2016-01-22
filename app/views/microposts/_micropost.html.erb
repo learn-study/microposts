@@ -9,10 +9,15 @@
       <% if current_user == micropost.user %>
         <%= link_to micropost, method: :delete,
                                        data: { confirm: "You sure?" },
-                                       title: "#{micropost.content}を削除する" do %>
+                                       title: "リツイートを取り消す" do %>
            <i class="fa fa-trash-o trash"></i>
         <% end %>
       <% end %>
+      
+      <i class="fa fa-retweet retweet", title="リツイートはさらにリツイートできません。" style="color:#ccc;">
+        <span style="color:#666"><%= retweet_count(micropost) %></span>
+      </i>
+      
     </span>
   <% else %>
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
@@ -30,7 +35,9 @@
       
       <%= link_to retweet_micropost_path(micropost),
                                   title: "リツイート" do %>
-        <i class="fa fa-retweet retweet"></i>
+        <i class="fa fa-retweet retweet">
+          <%= original_retweet_count(micropost) unless original_retweet_count(micropost)==0 %>
+        </i>
         
       <% end %>
     </span>

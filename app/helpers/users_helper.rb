@@ -12,6 +12,14 @@ module UsersHelper
   end
   
   def retweet_post(micropost)
-     Micropost.find_by(id:micropost.retweet)
+    Micropost.find_by(id:micropost.retweet)
+  end
+  
+  def retweet_count(micropost)
+    Micropost.where(retweet: micropost.retweet).count
+  end
+  
+  def original_retweet_count(micropost)
+    Micropost.where(retweet: micropost.id).count
   end
 end
