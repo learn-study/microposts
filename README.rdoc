@@ -21,9 +21,11 @@ kaminari branch
 投稿は10投稿毎、ユーザーは9人毎にページネーション
 
 == リツイート
+
 retweet branch
 
 親投稿を削除すると子投稿も削除されるサンプル
 
 == 公開URL(heroku)
-learn-study-microposts.herokuapp.com
+
+http://learn-study-microposts.herokuapp.com/
