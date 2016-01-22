@@ -25,9 +25,5 @@ retweet branch
 
 親投稿を削除すると子投稿も削除されるサンプル
 
-自分の投稿をリツイートできる
-
-リツイートはさらにリツイートできない。
-
 == 公開URL(heroku)
 learn-study-microposts.herokuapp.com
