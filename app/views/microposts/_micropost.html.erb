@@ -18,6 +18,7 @@
         <span style="color:#666"><%= retweet_count(micropost) %></span>
       </i>
       
+      <%= render 'users/favorite_form', micropost: micropost %>
     </span>
   <% else %>
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
@@ -38,8 +39,9 @@
         <i class="fa fa-retweet retweet">
           <%= original_retweet_count(micropost) unless original_retweet_count(micropost)==0 %>
         </i>
-        
       <% end %>
+      
+      <%= render 'users/favorite_form', micropost: micropost %>
     </span>
   <% end %>
 </li>

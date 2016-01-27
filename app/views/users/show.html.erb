@@ -50,31 +50,38 @@
       <div class="col-md-2 <%= 'current' unless @microposts.blank? %>">ツイート<br><%= link_to @user.microposts.count, @user,class: 'count_color' %></div>
       <div class="col-md-2 <%= 'current' unless @followings.blank? %>">フォロー<br><%= link_to @user.following_users.count, followings_user_path(@user),class: 'count_color' %></div>
       <div class="col-md-2 <%= 'current' unless @followers.blank? %>">フォロワー<br><%= link_to @user.follower_users.count, followers_user_path(@user),class: 'count_color' %></div>
-      <div class="col-md-2">いいね</div>
+      <div class="col-md-2 <%= 'current' unless @favorites.blank? %>">いいね<br><%= link_to @user.favorites.count, favorites_user_path(@user),class: 'count_color',  id: "favorite-count" %></div>
       <div class="col-md-offset-2 col-md-2"><%= render 'follow_form' if logged_in? %></div>
     </div>
     <% if @microposts.present? %>
       <ol class="microposts">
         <%= render @microposts %>
         <div class="col-md-12">  
-        <%= paginate @microposts %>
+          <%= paginate @microposts %>
         </div>
       </ol>
     <% elsif @followings.present? %>
       <%= render @followings %>
       <div class="col-md-12">  
-      <%= paginate @followings %>
+        <%= paginate @followings %>
       </div>
     <% elsif @followers.present? %>
       <%= render @followers %>
       <div class="col-md-12">  
-      <%= paginate @followers %>
+        <%= paginate @followers %>
       </div>
     <% elsif @users.present? %>
       <%= render @users %>
       <div class="col-md-12">  
-      <%= paginate @users %>
+        <%= paginate @users %>
       </div>
+    <% elsif @favorites.present? %>
+      <ol class="microposts">
+        <%= render @favorites %>
+        <div class="col-md-12">  
+          <%= paginate @favorites %>
+        </div>
+      </ol>
     <% end %>
     </div>
   </div>

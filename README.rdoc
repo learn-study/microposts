@@ -14,17 +14,22 @@ user-profile branch
 
 followings-followers branch
 
-== ページネーション
+== ページネーション表示機能
 
 kaminari branch
 
 投稿は10投稿毎、ユーザーは9人毎にページネーション
 
-== リツイート
+== リツイート機能
 
 retweet branch
 
 親投稿を削除すると子投稿も削除されるサンプル
+
+== お気に入り機能
+
+favorite branch
+
 
 == 公開URL(heroku)
 

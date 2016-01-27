@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :followings, :followers]
+  before_action :set_user, only: [:show, :edit, :update, :followings, :followers, :favorites]
   before_action :authentication, only: [:edit, :update]
   before_action :logged_in_user, only: [:index]
   
@@ -46,6 +46,11 @@ class UsersController < ApplicationController
 
   def followers
     @followers = @user.follower_users.page params[:page]
+    render 'show'
+  end
+
+  def favorites
+    @favorites = @user.favorite_microposts.order(created_at: :desc).page params[:page]
     render 'show'
   end
 
