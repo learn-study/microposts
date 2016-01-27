@@ -1,7 +1,11 @@
-<span id="favorite_form-<%= micropost.id %>">
-<% if current_user.favorite?(micropost) %>
-  <%= render 'users/unfavorite', micropost: micropost %>
+<% if logged_in? %>
+  <span id="favorite_form-<%= micropost.id %>">
+  <% if current_user.favorite?(micropost) %>
+    <%= render 'users/unfavorite', micropost: micropost %>
+  <% else %>
+    <%= render 'users/favorite', micropost: micropost %>
+  <% end %>
+  </span>
 <% else %>
-  <%= render 'users/favorite', micropost: micropost %>
+  <i class="fa fa-heart" style="color:#f45"></i><%= micropost.favolited.count unless micropost.favolited.count == 0 %>
 <% end %>
-</span>
