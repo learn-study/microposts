@@ -1,11 +1,8 @@
-<div class="col-md-4">
-  <div class=" ProfileBox">
-    <div class="background" style="background:#39f;"></div>
-    <%= link_to gravatar_for(user, size: 68), user %>
-    <div class ="user_name"><%= link_to user.name, user %></div>
-    <div class ="user_profile"><%= cut_off(user.profile,88) %></div>
-    <%  @user= user %>
-    <div class = "follow_form"><%= render 'follow_form' if logged_in? %></div>
-
-  </div>
+<div class="col-md-4 ProfileBox">
+  <div class="background" style="background:#39f;"></div>
+  <%= link_to gravatar_for(user, size: 68), user %>
+  <div class ="user_name"><%= link_to user.name, user %></div>
+  <div class ="user_profile"><%= cut_off(user.profile,88) %></div>
+  <%  @user= user %>
+  <div class = "follow_form"><%= render 'follow_form' if logged_in? %></div>
 </div>
