@@ -31,6 +31,10 @@ retweet branch
 favorite branch
 
 
+== ページネーションをinfinite scrollで読み込み
+
+infinity branch
+
 == 公開URL(heroku)
 
 http://learn-study-microposts.herokuapp.com/
