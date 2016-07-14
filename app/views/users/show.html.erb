@@ -47,10 +47,10 @@
   </aside>
   <div class="col-md-9">
     <div class="user_counts" style="margin-top:10px;height:80px;">
-      <div class="col-md-2 <%= 'current' unless @microposts.blank? %>">ツイート<br><%= link_to @user.microposts.count, @user,class: 'count_color' %></div>
-      <div class="col-md-2 <%= 'current' unless @followings.blank? %>">フォロー<br><%= link_to @user.following_users.count, followings_user_path(@user),class: 'count_color',  id: "follow-count" %></div>
-      <div class="col-md-2 <%= 'current' unless @followers.blank? %>">フォロワー<br><%= link_to @user.follower_users.count, followers_user_path(@user),class: 'count_color',  id: "follower-count" %></div>
-      <div class="col-md-2 <%= 'current' unless @favorites.blank? %>">いいね<br><%= link_to @user.favorites.count, favorites_user_path(@user),class: 'count_color',  id: "favorite-count" %></div>
+      <div class="col-xs-2 <%= 'current' unless @microposts.blank? %>">ツイート<br><%= link_to @user.microposts.count, @user,class: 'count_color' %></div>
+      <div class="col-xs-2 <%= 'current' unless @followings.blank? %>">フォロー<br><%= link_to @user.following_users.count, followings_user_path(@user),class: 'count_color',  id: "follow-count" %></div>
+      <div class="col-xs-2 <%= 'current' unless @followers.blank? %>">フォロワー<br><%= link_to @user.follower_users.count, followers_user_path(@user),class: 'count_color',  id: "follower-count" %></div>
+      <div class="col-xs-2 <%= 'current' unless @favorites.blank? %>">いいね<br><%= link_to @user.favorites.count, favorites_user_path(@user),class: 'count_color',  id: "favorite-count" %></div>
       <div class="col-md-offset-2 col-md-2"><%= render 'follow_form' if logged_in? %></div>
     </div>
     <% if @microposts.present? %>
