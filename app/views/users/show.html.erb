@@ -68,6 +68,7 @@
     <% elsif @favorites.present? %>
       <ol class="microposts"><%= render @favorites %></ol>
       <%= paginate @favorites %>
+      <%= @favorites.inspect %>
     <% end %>
     </div>
   </div>

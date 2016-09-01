@@ -37,7 +37,8 @@ class User < ActiveRecord::Base
     following_users.include?(other_user)
   end
   
-  has_many :favorites, dependent: :destroy
+  has_many :favorites, ->{order("created_at ASC") }, dependent:   :destroy
+
   has_many :favorite_microposts, through: :favorites, source: :micropost
   def favorite(micropost)
     favorites.find_or_create_by(micropost_id: micropost.id)
