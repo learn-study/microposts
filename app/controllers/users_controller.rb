@@ -11,10 +11,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    puts 'この文章はusers＃showで表示されています。'
-    puts 'この下にputsとinspectを用いて変数@userを表示させます。'
-    puts @user.inspect
-    puts '@@@@@@@@@@@この上までが変数@userの中身です。@@@@@@@@@'
     @microposts = @user.microposts.order(created_at: :desc).page params[:page]
   end
 
